@@ -11,17 +11,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
+        android:layout_weight="5"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
                 android:padding="10dp">
 
                 <TextView
@@ -42,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:orientation="horizontal"
+                android:layout_marginRight="10dp"
                 android:padding="10dp">
 
                 <TextView
@@ -58,9 +61,10 @@
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#3b4447"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:indeterminate="false"
-            android:indeterminateTint="@android:color/holo_red_dark"
             android:progress="10"
             android:rotation="180" />
 
@@ -69,8 +73,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#ffffff"
-        android:layout_weight="6">
+        android:background="@drawable/round_rectangle"
+        android:layout_weight="5">
 
     </LinearLayout>
 

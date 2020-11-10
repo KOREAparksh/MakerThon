@@ -2,18 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/reservation"
-        android:enabled="true"
         android:icon="@drawable/ic_baseline_dehaze_24"
-        android:title="1" />
+        android:title="" />
     <item
         android:id="@+id/key"
-        android:enabled="true"
-        android:checked="true"
         android:icon="@drawable/ic_baseline_key_24"
-        android:title="2" />
+        android:title="" />
     <item
         android:id="@+id/setting"
-        android:enabled="true"
         android:icon="@drawable/ic_baseline_settings_24"
-        android:title="3" />
+        android:title="" />
 </menu>
