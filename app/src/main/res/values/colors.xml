@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#2222ff</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="darkNavy">#0e161e</color>
+    <color name="darkNavy_selected">#2f272f</color>
     <color name="partitionGray">#7c7c7c</color>
     <color name="pointSkyblue">#2bb9cc</color>
     <color name="testRed2">#990000</color>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/darkNavy"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="200dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:background="#7c7c7c"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/studio_name_reservation_recycler_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="15dp"
+            android:text="ABC studio"
+            android:textSize="30dp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/studio_location_reservation_recycler_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:gravity="bottom"
+            android:paddingTop="10dp"
+            android:layout_marginRight="15dp"
+            android:text="서울광역시 마포구"
+            android:textSize="15dp"
+            android:textColor="@android:color/white"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/studio_image_reservation_recycler_item"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/studio_src"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="6dp"
+        android:scaleType="center"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/studio_introduce_short_reservation_recycler_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="15dp"
+            android:text="스튜디오를 간단히 소개하는 글"
+            android:textSize="15dp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/won_reservation_recycler_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/studio_price_reservation_recycler_item"
+            android:gravity="bottom"
+            android:layout_marginRight="1dp"
+            android:text="₩"
+            android:textSize="25dp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/studio_price_reservation_recycler_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/time_reservation_recycler_item"
+            android:gravity="bottom"
+            android:layout_marginRight="5dp"
+            android:text="30000"
+            android:textSize="25dp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/time_reservation_recycler_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:gravity="bottom"
+            android:layout_marginRight="15dp"
+            android:text="/시간"
+            android:textSize="15dp"
+            android:textColor="@android:color/white"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

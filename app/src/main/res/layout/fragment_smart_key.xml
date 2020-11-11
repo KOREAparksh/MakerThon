@@ -27,15 +27,25 @@
                 android:padding="10dp">
 
                 <TextView
+                    android:id="@+id/remain_time_hour_smartKey"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1시간 20분"
+                    android:text="1시간"
+                    android:textColor="@color/pointSkyblue" />
+
+                <TextView
+                    android:id="@+id/remain_time_min_smartKey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="20분"
                     android:textColor="@color/pointSkyblue" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="    남음"
+                    android:layout_marginLeft="6dp"
+                    android:text="남음"
                     android:textColor="@color/pointSkyblue" />
             </LinearLayout>
 
@@ -48,6 +58,7 @@
                 android:padding="10dp">
 
                 <TextView
+                    android:id="@+id/end_time_smartKey"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="10시 30분"
@@ -68,13 +79,152 @@
             android:progress="10"
             android:rotation="180" />
 
+        <TextView
+            android:id="@+id/studio_name_smartKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="ABC studio"
+            android:textSize="40dp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/studio_location_smartKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="서울광역시 마포구"
+            android:textSize="15dp"
+            android:textColor="@android:color/white"/>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/round_rectangle"
-        android:layout_weight="5">
+        android:layout_weight="5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:text="NFC 열기 활성화"/>
+
+                <CheckBox
+                    android:id="@+id/nfc_checkbox_smartKey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/return_button_smartKey"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/round_button"
+                android:text="반납"
+                android:textSize="20dp"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_weight="6">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp">
+
+                <LinearLayout
+                    android:id="@+id/open_button_smartKey"
+                    android:layout_width="150dp"
+                    android:layout_height="130dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:background="@drawable/round_rectangle_left_only_selector"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:tint="#1e1e1e"
+                        android:src="@drawable/ic_baseline_lock_open_24"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#1e1e1e"
+                        android:text="열림"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#f2f2f2">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@color/partitionGray"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/close_button_smartKey"
+                    android:layout_width="150dp"
+                    android:layout_height="130dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:background="@drawable/round_rectangle_right_only_selector"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:tint="#1e1e1e"
+                        android:src="@drawable/ic_baseline_lock_24"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#1e1e1e"
+                        android:text="닫힘"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

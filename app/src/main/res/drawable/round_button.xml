@@ -1,0 +1,28 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- selector가 눌렸을때 -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners
+                android:bottomRightRadius="55dp"
+                android:bottomLeftRadius="55dp"
+                android:topRightRadius="55dp"
+                android:topLeftRadius="55dp" />
+            <solid android:color="@color/darkNavy_selected" />
+        </shape>
+    </item>
+
+    <!-- selector가 눌리지 않았을때 -->
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <corners
+                android:bottomRightRadius="55dp"
+                android:bottomLeftRadius="55dp"
+                android:topRightRadius="55dp"
+                android:topLeftRadius="55dp"/>
+            <solid android:color="@color/darkNavy" />
+        </shape>
+    </item>
+
+</selector>
+
