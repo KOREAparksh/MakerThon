@@ -27,7 +27,7 @@
             android:id="@+id/logout_button_fragment_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignTop="@id/profile_image_fragment_setting"
             android:layout_marginRight="80dp"
             android:layout_marginTop="10dp"
@@ -36,8 +36,11 @@
             android:clickable="true"
             android:layout_gravity="center"
             android:background="?attr/selectableItemBackgroundBorderless"/>
-
-
     </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_frag_setting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

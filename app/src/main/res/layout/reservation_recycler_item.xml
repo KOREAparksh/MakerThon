@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/darkNavy"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/layout_reservation_item"
+    android:clickable="true">
 
     <View
         android:layout_width="match_parent"

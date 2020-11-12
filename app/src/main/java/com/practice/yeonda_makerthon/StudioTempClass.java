@@ -1,11 +1,10 @@
 package com.practice.yeonda_makerthon;
 
-public class StudioTempClass {
+import java.io.Serializable;
 
-    String name, location, introduce, price;
+public class StudioTempClass implements Serializable {
 
-    public StudioTempClass() {
-    }
+    private String name, location, introduce, price;
 
     public StudioTempClass(String name, String location, String introduce, String price) {
         this.name = name;
