@@ -42,8 +42,21 @@ public class ActivityDetailView extends AppCompatActivity {
 
         initView();
         setValues();
-
         setNoticeList();
+
+
+        // TODO: 2020/11/13
+        /***
+         * temporary
+         * */
+        reservationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityDetailView.this, ActivityReservationSetting.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void setValues() {
