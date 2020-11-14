@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ActivityMain extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -21,6 +24,7 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
     private FragmentReservation fragmentReservation;
     private FragmentSmartKey fragmentSmartKey;
     private FragmentSetting fragmentSetting;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,7 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
         fragmentReservation = new FragmentReservation();
         fragmentSmartKey = new FragmentSmartKey();
         fragmentSetting = new FragmentSetting();
+
 
         navi.setSelectedItemId(R.id.key);//초반 픽되어있을 곳
 

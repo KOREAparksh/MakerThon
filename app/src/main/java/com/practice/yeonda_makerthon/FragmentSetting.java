@@ -1,5 +1,6 @@
 package com.practice.yeonda_makerthon;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.media.Image;
@@ -20,12 +21,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class FragmentSetting extends Fragment {
+public class FragmentSetting extends Fragment implements View.OnClickListener {
 
     private View view;
 
@@ -34,6 +36,8 @@ public class FragmentSetting extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private AdapterSetting adapter;
+
+
 
     private ArrayList<String> list = new ArrayList<String>();
 
@@ -44,15 +48,35 @@ public class FragmentSetting extends Fragment {
         view = inflater.inflate(R.layout.fragment_setting, container, false);
 
         initialView();
-
+        setListener();
 
         return view;
+    }
+
+    private void setListener() {
+        logout.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.logout_button_fragment_setting :
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getActivity(), ActivityLogin.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                getActivity().startActivity(intent);
+                getActivity().finish();
+
+        }
+
     }
 
     private void initialView() {
         profile = (ImageView)view.findViewById(R.id.profile_image_fragment_setting);
         logout = (TextView)view.findViewById(R.id.logout_button_fragment_setting);
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView_frag_setting);
+
+
 
         Glide.with(this).load(R.drawable.unnamed).circleCrop().into(profile);
 
