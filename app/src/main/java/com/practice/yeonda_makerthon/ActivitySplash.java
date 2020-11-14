@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.practice.yeonda_makerthon.login.ActivityLogin;
-
 public class ActivitySplash extends AppCompatActivity {
 
     @Override

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "568829257626",
+    "firebase_url": "https://f10-makerthon.firebaseio.com",
+    "project_id": "f10-makerthon",
+    "storage_bucket": "f10-makerthon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568829257626:android:a5c3ecf82ee91f24317c23",
+        "android_client_info": {
+          "package_name": "com.practice.yeonda_makerthon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568829257626-ufg1qhvqfbkgm9ignrv4a0vvi5412dhd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.practice.yeonda_makerthon",
+            "certificate_hash": "179935a0c0b834ea506d3be02d6efb044ba331f3"
+          }
+        },
+        {
+          "client_id": "568829257626-5gmg2pk8qffp5nfup7m6tbb6rsjj0mi4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqCH11D5_GHsRKoXjSN55kVjznfeWTTf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568829257626-5gmg2pk8qffp5nfup7m6tbb6rsjj0mi4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
