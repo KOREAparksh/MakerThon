@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityLogin"></activity>
+        <activity android:name=".ActivityLogin">
+        </activity>
         <activity android:name=".ActivitySplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +20,8 @@
         </activity>
         <activity android:name=".ActivityReservationSetting" />
         <activity android:name=".ActivityDetailView" />
-        <activity android:name=".ActivityMain" />
+        <activity android:name=".ActivityMain">
+        </activity>
     </application>
 
 </manifest>
