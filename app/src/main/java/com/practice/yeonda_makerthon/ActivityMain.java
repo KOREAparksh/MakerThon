@@ -37,7 +37,6 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
     FirebaseDatabase database;
     DatabaseReference myRef;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
