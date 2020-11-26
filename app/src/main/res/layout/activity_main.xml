@@ -7,6 +7,21 @@
     tools:context=".ActivityMain"
     android:background="@color/darkNavy">
 
+    <LinearLayout
+        android:id="@+id/login_progressbar_layout_main_act"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:elevation="5dp"
+        android:background="#77000000">
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+    </LinearLayout>
+
     
     <FrameLayout
         android:id="@+id/frameLayout"

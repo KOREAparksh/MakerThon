@@ -11,7 +11,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,6 +39,7 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
     private FragmentReservation fragmentReservation;
     private FragmentSmartKey fragmentSmartKey;
     private FragmentSetting fragmentSetting;
+    private LinearLayout progressBarLayout;
 
     FirebaseDatabase database;
     DatabaseReference myRef;
@@ -48,19 +52,30 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
         setContentView(R.layout.activity_main);
 
         initView();
-
+        getData();
         navi.setOnNavigationItemSelectedListener(this);
-        setFrag(0);
+        isNowLoading(true);
+    }
 
-
+    private void isNowLoading(boolean loading){
+        //터치가 되게
+        if(loading == false){
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            progressBarLayout.setVisibility(View.GONE);
+            setFrag(0);
+            navi.setSelectedItemId(R.id.reservation);//초반 픽되어있을 곳
+        }
+        //터치가 안되게
+        else if(loading ==true){
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            progressBarLayout.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("spaces");
-        getData();
     }
 
     private void getData() {
@@ -81,6 +96,7 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
 
                     studioList.add(temp);
                 }
+                isNowLoading(false);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -94,9 +110,11 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
         fragmentReservation = new FragmentReservation();
         fragmentSmartKey = new FragmentSmartKey();
         fragmentSetting = new FragmentSetting();
+        progressBarLayout = (LinearLayout)findViewById(R.id.login_progressbar_layout_main_act);
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("spaces");
 
 
-        navi.setSelectedItemId(R.id.key);//초반 픽되어있을 곳
 
     }
 
