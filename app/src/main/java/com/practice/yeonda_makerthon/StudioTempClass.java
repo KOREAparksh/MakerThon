@@ -6,6 +6,9 @@ public class StudioTempClass implements Serializable {
 
     private String name, location, introduce, price;
 
+    public StudioTempClass() {
+    }
+
     public StudioTempClass(String name, String location, String introduce, String price) {
         this.name = name;
         this.location = location;

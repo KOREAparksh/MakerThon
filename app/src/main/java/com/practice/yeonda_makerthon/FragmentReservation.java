@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,18 +30,11 @@ public class FragmentReservation extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         adapter = new AdapterReservation();
-        StudioTempClass studioTemp = new StudioTempClass("ABC studio", "서울특별시 마포구", "스튜디오 간단히 소개하는 글", "30000");
-        StudioTempClass studioTemp2 = new StudioTempClass("F10 studio", "서울특별시 광진구", "와타시와 칸코구 카라 키마시타", "20000");
-        StudioTempClass studioTemp3 = new StudioTempClass("ABC studio", "서울특별시 마포구", "스튜디오 간단히 소개하는 글", "30000");
-        StudioTempClass studioTemp4 = new StudioTempClass("F10 studio", "서울특별시 광진구", "와타시와 칸코구 카라 키마시타", "20000");
-        StudioTempClass studioTemp5 = new StudioTempClass("ABC studio", "서울특별시 마포구", "스튜디오 간단히 소개하는 글", "30000");
-        StudioTempClass studioTemp6 = new StudioTempClass("F10 studio", "서울특별시 광진구", "와타시와 칸코구 카라 키마시타", "20000");
-        adapter.setStudioData(studioTemp);
-        adapter.setStudioData(studioTemp2);
-        adapter.setStudioData(studioTemp3);
-        adapter.setStudioData(studioTemp4);
-        adapter.setStudioData(studioTemp5);
-        adapter.setStudioData(studioTemp6);
+
+        for(int i=0; i<ActivityMain.studioList.size(); i++){
+            adapter.setStudioData(ActivityMain.studioList.get(i));
+        }
+
         recyclerView.setAdapter(adapter);
 
         return view;

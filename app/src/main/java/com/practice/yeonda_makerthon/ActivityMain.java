@@ -25,6 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class ActivityMain extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private FrameLayout frameLayout;
@@ -37,6 +39,8 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
 
     FirebaseDatabase database;
     DatabaseReference myRef;
+
+    static ArrayList<StudioTempClass> studioList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,32 +60,27 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                studioList.clear();
                 String str = snapshot.getValue().toString();
-                Log.d("aaaa","getValue : "+snapshot.getValue());
-                Log.d("aaaa","getValue toString: "+snapshot.getValue().toString());
-                Log.d("aaaa","getKey : "+snapshot.getKey());
-                Log.d("aaaa","getChildren : "+snapshot.getChildren());
-                Log.d("aaaa","getChildrenCount : "+snapshot.getChildrenCount());
-                Log.d("aaaa","getRef : "+snapshot.getRef());
+                Log.d("aaaa","getValue : "+snapshot.child("1").child("basic_info").child("address").child("add1").getValue());
 
-                String cc = "";
-                try {
-                    JSONObject json = new JSONObject(str);
-                    cc = json.get("cc").toString();
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                for(DataSnapshot s : snapshot.getChildren()){
+                    StudioTempClass temp = new StudioTempClass();
+                    temp.setName(s.child("basic_info").child("title").getValue().toString());
+                    temp.setIntroduce(s.child("intro").child("description").getValue().toString());
+                    temp.setLocation(s.child("basic_info").child("address").child("add1").getValue().toString()
+                            +" "+s.child("basic_info").child("address").child("add2").getValue().toString());
+                    temp.setPrice(s.child("price").child("1").child("price").getValue().toString());
+
+                    studioList.add(temp);
                 }
-
-                Log.d("aaaa","test : "+str);
-                Log.d("aaaa","test : "+cc);
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
+
+
     }
 
     private void initView() {
