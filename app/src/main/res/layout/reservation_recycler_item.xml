@@ -34,6 +34,7 @@
             android:textSize="30dp"
             android:ellipsize="marquee"
             android:singleLine="true"
+            android:focusable="true"
             android:textColor="@android:color/white"/>
 
         <TextView
@@ -50,6 +51,7 @@
             android:textSize="15dp"
             android:ellipsize="marquee"
             android:singleLine="true"
+            android:focusable="true"
             android:textColor="@android:color/white"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,8 +64,8 @@ public class AdapterReservation extends RecyclerView.Adapter<AdapterReservation.
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            studioName = (TextView) itemView.findViewById(R.id.studio_name_reservation_recycler_item);
-            studioLocation = (TextView) itemView.findViewById(R.id.studio_location_reservation_recycler_item);
+            studioName = (TextView) itemView.findViewById(R.id.studio_name_reservation_recycler_item); studioName.setSelected(true);
+            studioLocation = (TextView) itemView.findViewById(R.id.studio_location_reservation_recycler_item); studioLocation.setSelected(true);
             studioIntroduce = (TextView) itemView.findViewById(R.id.studio_introduce_short_reservation_recycler_item);
             studioPrice = (TextView) itemView.findViewById(R.id.studio_price_reservation_recycler_item);
             studioImage = (ImageView) itemView.findViewById(R.id.studio_image_reservation_recycler_item);
