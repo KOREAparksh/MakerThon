@@ -1,6 +1,5 @@
 package com.practice.yeonda_makerthon;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class AdapterReservation extends RecyclerView.Adapter<AdapterReservation.ViewHolder> {
@@ -38,7 +36,13 @@ public class AdapterReservation extends RecyclerView.Adapter<AdapterReservation.
         holder.studioLocation.setText(data.get(position).getLocation());
         holder.studioIntroduce.setText(data.get(position).getIntroduce());
         holder.studioPrice.setText(data.get(position).getPrice());
-        holder.studioImage.setImageResource(R.drawable.studio_src);
+        if(position == 0)
+            holder.studioImage.setImageResource(R.drawable.studio_src1);
+        else if(position==1)
+            holder.studioImage.setImageResource(R.drawable.studio_src2);
+        else
+            holder.studioImage.setImageResource(R.drawable.studio_src3);
+
 
         holder.totalLayout.setOnClickListener(new View.OnClickListener() {
             @Override

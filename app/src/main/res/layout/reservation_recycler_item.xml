@@ -55,10 +55,10 @@
         android:id="@+id/studio_image_reservation_recycler_item"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/studio_src"
+        android:src="@drawable/studio_src3"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="6dp"
-        android:scaleType="center"/>
+        android:scaleType="fitXY"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

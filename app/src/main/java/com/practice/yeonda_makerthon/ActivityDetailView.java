@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ public class ActivityDetailView extends AppCompatActivity {
     private TextView name, location, price, introduce;
     private Button reservationButton;
     private RecyclerView recyclerView;
+    private ImageView imageView;
 
     private RecyclerView.LayoutManager layoutManager;
 
@@ -64,6 +66,12 @@ public class ActivityDetailView extends AppCompatActivity {
         location.setText(studio.getLocation());
         price.setText(studio.getPrice());
         introduce.setText(studio.getIntroduce());
+        if(studio.getPosition()==1)
+            imageView.setImageResource(R.drawable.studio_src1);
+        else if (studio.getPosition() ==2)
+            imageView.setImageResource(R.drawable.studio_src2);
+        else
+            imageView.setImageResource(R.drawable.studio_src3);
     }
 
     private void setNoticeList() {
@@ -85,6 +93,7 @@ public class ActivityDetailView extends AppCompatActivity {
         Intent intent = getIntent();
         studio = (StudioTempClass) intent.getSerializableExtra("class");
 
+        imageView = (ImageView)findViewById(R.id.imageView_detailView);
         name = (TextView)findViewById(R.id.studio_name_detailView);
         location = (TextView)findViewById(R.id.studio_location_detailView);
         price = (TextView)findViewById(R.id.studio_price_detailView);

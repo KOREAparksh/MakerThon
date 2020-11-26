@@ -86,6 +86,7 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
                 String str = snapshot.getValue().toString();
                 Log.d("aaaa","getValue : "+snapshot.child("1").child("basic_info").child("address").child("add1").getValue());
 
+                int i =1 ;
                 for(DataSnapshot s : snapshot.getChildren()){
                     StudioTempClass temp = new StudioTempClass();
                     temp.setName(s.child("basic_info").child("title").getValue().toString());
@@ -93,8 +94,10 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
                     temp.setLocation(s.child("basic_info").child("address").child("add1").getValue().toString()
                             +" "+s.child("basic_info").child("address").child("add2").getValue().toString());
                     temp.setPrice(s.child("price").child("1").child("price").getValue().toString());
+                    temp.setPosition(i);
 
                     studioList.add(temp);
+                    i++;
                 }
                 isNowLoading(false);
             }

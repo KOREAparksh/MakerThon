@@ -5,6 +5,8 @@ import java.io.Serializable;
 public class StudioTempClass implements Serializable {
 
     private String name, location, introduce, price;
+    private int position;
+
 
     public StudioTempClass() {
     }
@@ -14,6 +16,15 @@ public class StudioTempClass implements Serializable {
         this.location = location;
         this.introduce = introduce;
         this.price = price;
+    }
+
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     public String getName() {

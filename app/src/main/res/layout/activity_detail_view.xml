@@ -16,7 +16,7 @@
             android:id="@+id/imageView_detailView"
             android:layout_width="match_parent"
             android:layout_height="230dp"
-            android:src="@drawable/studio_src"
+            android:src="@drawable/studio_src3"
             android:scaleType="center"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
