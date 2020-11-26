@@ -1,7 +1,9 @@
 package com.practice.yeonda_makerthon;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +24,12 @@ import com.applikeysolutions.cosmocalendar.selection.SingleSelectionManager;
 import com.applikeysolutions.cosmocalendar.settings.lists.DisabledDaysCriteria;
 import com.applikeysolutions.cosmocalendar.settings.lists.DisabledDaysCriteriaType;
 import com.applikeysolutions.cosmocalendar.view.CalendarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -57,6 +65,13 @@ public class ActivityReservationSetting extends AppCompatActivity implements Vie
 
     private String selected_time;
 
+    StudioTempClass studio;
+
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseDatabase database;
+    DatabaseReference myRef;
+    int nowReservationSize;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +93,44 @@ public class ActivityReservationSetting extends AppCompatActivity implements Vie
             }
         }));
 
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                nowReservationSize = (int) snapshot.getChildrenCount();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+        reservationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addReservation();
+                Intent intent = new Intent(ActivityReservationSetting.this,ActivityMain.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
     }
+
+    void addReservation(){
+        BasicReservationClass basicReservationClass = new BasicReservationClass();
+        basicReservationClass.setCapacity("4");
+        basicReservationClass.setDate("2020-11-27");
+        basicReservationClass.setDoorlock_id("3");
+        basicReservationClass.setEnd_time(selectedTime.getText().toString().substring(6,10));
+        basicReservationClass.setPrice_option_id("1");
+        basicReservationClass.setReservation_id(String.valueOf(nowReservationSize+1));
+        basicReservationClass.setSpace_id(String.valueOf(studio.getPosition()));
+        basicReservationClass.setStart_time(selectedTime.getText().toString().substring(0,4));
+        basicReservationClass.setStatus(1);
+        basicReservationClass.setUser("913C5155");
+
+        myRef.child(String.valueOf(nowReservationSize+1)).setValue(basicReservationClass);
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -144,6 +196,14 @@ public class ActivityReservationSetting extends AppCompatActivity implements Vie
         }
         oneHourButton.setOnClickListener(this);
         twoHourButton.setOnClickListener(this);
+
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("resevations");
+
+        Intent intent = getIntent();
+        studio = (StudioTempClass) intent.getSerializableExtra("class");
+
+        studioName.setText(studio.getName());
     }
 
 }
