@@ -25,33 +25,28 @@
         <TextView
             android:id="@+id/studio_name_reservation_recycler_item"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="38dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginLeft="15dp"
+            android:gravity="bottom"
             android:text="ABC studio"
-            android:textSize="30dp"
-            android:ellipsize="marquee"
-            android:singleLine="true"
-            android:focusable="true"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:textColor="@android:color/white"/>
 
         <TextView
             android:id="@+id/studio_location_reservation_recycler_item"
             android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:gravity="right"
+            android:gravity="end"
             android:paddingTop="10dp"
             android:layout_marginRight="15dp"
             android:text="서울광역시 마포구"
-            android:textSize="15dp"
-            android:ellipsize="marquee"
-            android:singleLine="true"
-            android:focusable="true"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:textColor="@android:color/white"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

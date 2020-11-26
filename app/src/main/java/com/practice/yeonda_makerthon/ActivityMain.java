@@ -48,12 +48,19 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
         setContentView(R.layout.activity_main);
 
         initView();
-        getData();
 
         navi.setOnNavigationItemSelectedListener(this);
-        setFrag(1);
+        setFrag(0);
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("spaces");
+        getData();
     }
 
     private void getData() {
@@ -79,8 +86,6 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-
-
     }
 
     private void initView() {
@@ -89,9 +94,6 @@ public class ActivityMain extends AppCompatActivity implements BottomNavigationV
         fragmentReservation = new FragmentReservation();
         fragmentSmartKey = new FragmentSmartKey();
         fragmentSetting = new FragmentSetting();
-
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("spaces");
 
 
         navi.setSelectedItemId(R.id.key);//초반 픽되어있을 곳
