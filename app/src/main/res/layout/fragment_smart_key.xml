@@ -30,7 +30,7 @@
                     android:id="@+id/remain_time_hour_smartKey"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1시간"
+                    android:text="0시간"
                     android:textColor="@color/pointSkyblue" />
 
                 <TextView
@@ -38,7 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="20분"
+                    android:text="50분"
                     android:textColor="@color/pointSkyblue" />
 
                 <TextView
@@ -61,7 +61,7 @@
                     android:id="@+id/end_time_smartKey"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10시 30분"
+                    android:text="12시 00분"
                     android:textColor="@color/pointSkyblue" />
             </LinearLayout>
 
@@ -76,7 +76,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:indeterminate="false"
-            android:progress="10"
+            android:progress="45"
             android:rotation="180" />
 
         <TextView
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
-            android:text="ABC studio"
+            android:text="콜라보랩 3D 프린터실"
             android:textSize="40dp"
             android:textColor="@android:color/white"/>
 
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
-            android:text="서울광역시 마포구"
+            android:text="광진구 능동로 209 세종대학교"
             android:textSize="15dp"
             android:textColor="@android:color/white"/>
 

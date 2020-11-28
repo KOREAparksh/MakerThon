@@ -70,6 +70,7 @@ public class ActivityReservationSetting extends AppCompatActivity implements Vie
     FirebaseAuth auth = FirebaseAuth.getInstance();
     FirebaseDatabase database;
     DatabaseReference myRef;
+    DatabaseReference myRef_doorlock;
     int nowReservationSize;
 
     @Override
@@ -120,15 +121,22 @@ public class ActivityReservationSetting extends AppCompatActivity implements Vie
         basicReservationClass.setCapacity("4");
         basicReservationClass.setDate("2020-11-27");
         basicReservationClass.setDoorlock_id("3");
-        basicReservationClass.setEnd_time(selectedTime.getText().toString().substring(6,10));
+        basicReservationClass.setEnd_time(selectedTime.getText().toString().substring(8,13));
         basicReservationClass.setPrice_option_id("1");
         basicReservationClass.setReservation_id(String.valueOf(nowReservationSize+1));
         basicReservationClass.setSpace_id(String.valueOf(studio.getPosition()));
-        basicReservationClass.setStart_time(selectedTime.getText().toString().substring(0,4));
+        basicReservationClass.setStart_time(selectedTime.getText().toString().substring(0,5));
         basicReservationClass.setStatus(1);
         basicReservationClass.setUser("913C5155");
 
         myRef.child(String.valueOf(nowReservationSize+1)).setValue(basicReservationClass);
+
+        myRef_doorlock.child("end_date").setValue(selectedTime.getText().toString().substring(8,13));
+        myRef_doorlock.child("start_date").setValue(selectedTime.getText().toString().substring(0,5));
+        myRef_doorlock.child("reservation_id").setValue(String.valueOf(nowReservationSize+1));
+        myRef_doorlock.child("type").setValue(1);
+        myRef_doorlock.child("user_id").setValue("913C5155");
+
     }
 
 
@@ -199,6 +207,7 @@ public class ActivityReservationSetting extends AppCompatActivity implements Vie
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("resevations");
+        myRef_doorlock = database.getReference("doorlocks").child("3").child("current_key_holder").child("1");
 
         Intent intent = getIntent();
         studio = (StudioTempClass) intent.getSerializableExtra("class");
